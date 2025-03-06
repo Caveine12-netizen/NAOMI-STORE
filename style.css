@@ -1,0 +1,175 @@
+/* Reset default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #101820;
+    color: white;
+    text-align: center;
+}
+
+/* Header */
+header {
+    padding: 20px;
+}
+
+.banner {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+/* Search & Filter */
+.search-container {
+    margin: 20px 0;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search {
+    background-color: green;
+    color: white;
+}
+
+.reset {
+    background-color: red;
+    color: white;
+}
+
+.category-buttons .btn {
+    background-color: blue;
+    color: white;
+}
+
+/* Product Section */
+h2 {
+    margin: 20px 0;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: #1C1C1C;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.read-more {
+    background-color: blue;
+    color: white;
+}
+
+.order {
+    background-color: green;
+    color: white;
+    display: block;
+    margin: 10px auto;
+    text-decoration: none;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 15% auto;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+/* Footer Contact Us */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1C1C1C;
+    text-align: center;
+    color: white;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer p:last-child {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #aaa;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer i {
+    margin-right: 8px;
+    color: #ffa500;
+}
+
+.thanks-message {
+    font-style: italic;
+    font-size: 16px;
+    color: #ddd;
+    margin-top: 15px;
+}
