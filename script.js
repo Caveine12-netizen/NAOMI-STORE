@@ -1,35 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Modal functionality
+    const modal = document.getElementById("modal");
+    const modalText = document.getElementById("modal-text");
+    const closeModal = document.querySelector(".close");
+    const readMoreButtons = document.querySelectorAll(".read-more");
+
+    readMoreButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            modalText.textContent = this.getAttribute("data-desc");
+            modal.style.display = "block";
+        });
+    });
+
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Search functionality
     const searchInput = document.getElementById("search");
-    const searchButton = document.querySelector(".btn.search");
-    const resetButton = document.querySelector(".btn.reset");
+    const searchButton = document.querySelector(".search");
+    const resetButton = document.querySelector(".reset");
     const productCards = document.querySelectorAll(".product-card");
 
-    function searchProducts() {
-        const searchText = searchInput.value.toLowerCase();
-        
+    searchButton.addEventListener("click", function () {
+        const query = searchInput.value.toLowerCase();
         productCards.forEach(card => {
-            const title = card.querySelector("h3").textContent.toLowerCase();
-            const description = card.querySelector(".read-more").getAttribute("data-desc").toLowerCase();
-
-            if (title.includes(searchText) || description.includes(searchText)) {
+            const productName = card.querySelector("h3").textContent.toLowerCase();
+            if (productName.includes(query)) {
                 card.style.display = "block";
             } else {
                 card.style.display = "none";
             }
         });
-    }
+    });
 
-    function resetSearch() {
+    // Reset search
+    resetButton.addEventListener("click", function () {
         searchInput.value = "";
-        productCards.forEach(card => card.style.display = "block");
-    }
-
-    searchButton.addEventListener("click", searchProducts);
-    resetButton.addEventListener("click", resetSearch);
-
-    searchInput.addEventListener("keyup", function (event) {
-        if (event.key === "Enter") {
-            searchProducts();
-        }
+        productCards.forEach(card => {
+            card.style.display = "block";
+        });
     });
 });
